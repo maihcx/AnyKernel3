@@ -39,6 +39,7 @@ case $kernel_version in
     *) ksu_supported=false ;;
 esac
 
+ui_print "内核构建者: xiaoxiaow"
 ui_print " " "  -> ksu_supported: $ksu_supported"
 $ksu_supported || abort "  -> Non-GKI device, abort."
 
