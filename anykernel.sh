@@ -42,7 +42,7 @@ esac
 
 ui_print "内核构建者: xiaoxiaow"
 ui_print "本内核永久免费！!拿去售卖的4000+"
-ui_print "Free kernel!!!!Stealing and selling to the death of the whole family"
+ui_print "Free kernel！！Stealing and selling to the death of the whole family"
 ui_print "Telegram @gki_kernels_xiaoxiaow"
 ui_print " " "  -> ksu_supported: $ksu_supported"
 $ksu_supported || abort "  -> Non-GKI device, abort."
