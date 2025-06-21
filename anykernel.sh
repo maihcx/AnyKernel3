@@ -41,6 +41,9 @@ case $kernel_version in
 esac
 
 ui_print "内核构建者: xiaoxiaow"
+ui_print "本内核永久免费！!"
+ui_print "Free kernel!!!!"
+ui_print "Telegram @gki_kernels_xiaoxiaow"
 ui_print " " "  -> ksu_supported: $ksu_supported"
 $ksu_supported || abort "  -> Non-GKI device, abort."
 
