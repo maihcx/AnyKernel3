@@ -322,7 +322,7 @@ flash_boot() {
       [ "$(eval echo \$$i)" -a -f $i ] && cp -f $(eval echo \$$i) $i;
     done;
     case $kernel in
-      *NkBe*)
+      *Image*)
         if [ ! "$magisk_patched" -a ! "$no_magisk_check" ]; then
           $bin/magiskboot cpio ramdisk.cpio test;
           magisk_patched=$?;
