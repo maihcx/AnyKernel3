@@ -1,5 +1,5 @@
 ### AnyKernel3 Ramdisk Mod Script
-## osm0sis @xda-developers 
+## osm0sis @ xda-developers 
 # 禁止二改，小心黑砖
 
 ### AnyKernel setup
@@ -28,6 +28,8 @@ is_slot_device=auto
 ramdisk_compression=auto
 patch_vbmeta_flag=auto
 no_magisk_check=1
+
+# import functions/variables and setup patching - see for reference (DO NOT REMOVE)
 . tools/core.sh
 
 kernel_version=$(cat /proc/version | awk -F '-' '{print $1}' | awk '{print $3}')
@@ -37,6 +39,7 @@ case $kernel_version in
     6.6*) ksu_supported=true ;;
     *) ksu_supported=false ;;
 esac
+
 ui_print "$(echo '5YaF5qC45p6E5bu66ICFOiDlsI8g5bCPdw==' | base64 -d)"
 ui_print "$(echo 'S2VybmVsIEJ1aWxkZXIgOiB4aWFveGlhb3c=' | base64 -d)"
 ui_print " "
@@ -51,15 +54,14 @@ ui_print "Thanks for using And wish you a great experience."
 ui_print " " "  -> ksu_supported: $ksu_supported"
 $ksu_supported || abort "  -> Non-GKI device, abort."
 
-sleep 0.3
 ui_print "Installing....."
 
-# boot 安装
+# boot install
 if [ -L "/dev/block/bootdevice/by-name/init_boot_a" -o -L "/dev/block/by-name/init_boot_a" ]; then
-    split_boot # 对于带有 init_boot ramdisk 的设备
-    flash_boot # 对于带有 init_boot ramdisk 的设备
+    split_boot # for devices with init_boot ramdisk
+    flash_boot # for devices with init_boot ramdisk
 else
-    dump_boot # 使用 split_boot 跳过 ramdisk 解包
-    write_boot # 使用 flash_boot 跳过 ramdisk 打包
+    dump_boot # use split_boot to skip ramdisk unpack, e.g. for devices with init_boot ramdisk
+    write_boot # use flash_boot to skip ramdisk repack, e.g. for devices with init_boot ramdisk
 fi
-## boot 安装结束
+## end boot install
