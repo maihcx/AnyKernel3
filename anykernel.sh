@@ -40,16 +40,11 @@ case $kernel_version in
     *) ksu_supported=false ;;
 esac
 
-ui_print "$(echo '5YaF5qC45p6E5bu66ICFOiDlsI8g5bCPdw==' | base64 -d)"
-ui_print "$(echo 'S2VybmVsIEJ1aWxkZXIgOiB4aWFveGlhb3c=' | base64 -d)"
-ui_print " "
-ui_print "$(echo -e '5pys5YaF5qC45rC45LmF5YWN6LS577yB77yB5LqM5qyh5YCS5Y2W55qENDAwMCs=' | base64 -d)"
-ui_print "$(echo 'RnJlZSBrZXJuZWzvvIHvvIFTdGVhbGluZyBhbmQgc2VsbGluZyB0byB0aGUgZGVhdGggb2YgdGhlIHdob2xlIGZhbWlseQ==' | base64 -d)"
+ui_print "$(echo 'S2VybmVsIEJ1aWxkZXIgOiBIdXluaCBNYWk=' | base64 -d)"
 ui_print " "
 ui_print "$(echo 'UGxlYXNlIEpvaW4gT3VyIFRlbGVncmFtIEdyb3Vw' | base64 -d)"
-ui_print "$(echo 'VGVsZWdyYW0gQGdraV9rZXJuZWxzX3hpYW94aWFvdw==' | base64 -d)"
+ui_print "$(echo 'VGVsZWdyYW0gQHZpZW9zb25lcGx1cw==' | base64 -d)"
 ui_print " "
-ui_print "感谢使用，祝您体验愉快"
 ui_print "Thanks for using And wish you a great experience."
 ui_print " " "  -> ksu_supported: $ksu_supported"
 $ksu_supported || abort "  -> Non-GKI device, abort."
